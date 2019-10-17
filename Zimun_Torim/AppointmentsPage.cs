@@ -58,15 +58,15 @@ namespace Zimun_Torim
 
         public DateTime isNextAvailableqeueAsRequested()
         {
-            var nextAvailableQeue = UnitTest1.wait.Until(x => x.FindElement(By.XPath("//*[@id='ctl01_doctorsGrid']/tbody/tr[3]/td[4]")));
+            var nextAvailableQeue = UnitTest1.wait.Until(x => x.FindElement(By.XPath("//*[@id='ctl01_doctorsGrid']/tbody/tr[2]/td[4]")));
             Thread.Sleep(2000);
             Console.WriteLine("next available qeue:" + nextAvailableQeue.Text);
 
-            var address = UnitTest1.wait.Until(x => x.FindElements(By.XPath("//*[@id='cliniclink']"))[1].Text);
+            var address = UnitTest1.wait.Until(x => x.FindElements(By.XPath("//*[@id='cliniclink']"))[0].Text);
             Console.WriteLine("address of doctor:" + address);
 
-            var availabledateDateTime = Convert.ToDateTime(nextAvailableQeue.Text);
-            var currentDateDateTime = Convert.ToDateTime(requestedDate);
+            var availabledateDateTime = DateTime.ParseExact(nextAvailableQeue.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);//Convert.ToDateTime(nextAvailableQeue.Text);
+            var currentDateDateTime = DateTime.ParseExact(requestedDate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             if (availabledateDateTime >= currentDateDateTime)
             {
                 Assert.Fail("אין תאריך מוקדם יותר");

@@ -22,17 +22,17 @@ namespace Zimun_Torim
         {
            // var form = UnitTest1.wait.Until(x => x.FindElement(By.CssSelector(".col.myID"))); 
 
-           // var userNameElement = UnitTest1.wait.Until(x => x.FindElement(By.Id("identifyWithPasswordCitizenId")));
+            var userNameElement = UnitTest1.wait.Until(x => x.FindElement(By.Id("identifyWithPasswordCitizenId")));
 
             
 
-                var userNameElement = UnitTest1.wait.Until(x => x.FindElement(By.ClassName("fgid_262")));
-            //userNameElement.SendKeys("036861672");
-            //var passwordElement = UnitTest1.wait.Until(x => x.FindElement(By.Id("password")));
-            var passwordElement = UnitTest1.wait.Until(x => x.FindElement(By.ClassName("fgid_342")));
+              //  var userNameElement = UnitTest1.wait.Until(x => x.FindElement(By.ClassName("fgid_262")));
+            userNameElement.SendKeys("036861672");
+            var passwordElement = UnitTest1.wait.Until(x => x.FindElement(By.Id("password")));
+            //var passwordElement = UnitTest1.wait.Until(x => x.FindElement(By.ClassName("fgid_342")));
             
-            //var enterLoginButtonElement = UnitTest1.wait.Until(x => x.FindElement(By.CssSelector("button.submit.validatePassword")));
-            var enterLoginButtonElement = UnitTest1.wait.Until(x => x.FindElement(By.ClassName("fgid_376")));
+            var enterLoginButtonElement = UnitTest1.wait.Until(x => x.FindElement(By.CssSelector("button.submit.validatePassword")));
+            //var enterLoginButtonElement = UnitTest1.wait.Until(x => x.FindElement(By.ClassName("fgid_376")));
             userNameElement.SendKeys(userName);
             passwordElement.SendKeys(password);
             enterLoginButtonElement.Click();
