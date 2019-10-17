@@ -37,7 +37,7 @@ namespace Zimun_Torim
             driver.Quit();
         }
         
-        [TestCase("036861672", "punchi1", "פורת", "משה", "23/05/2019")]
+        [TestCase("036861672", "punchi1", "כצמן", "מרינה", "18/10/2019")]
         public void IsDoctorAvailableYaniv(string userName, string password, string doctorLastName, string doctorFirstName, string currentDateDateTime)
         {
            
